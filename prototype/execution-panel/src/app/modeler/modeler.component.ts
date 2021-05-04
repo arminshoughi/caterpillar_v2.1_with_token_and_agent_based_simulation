@@ -11,6 +11,7 @@ import { CustomPropertiesProvider } from "./props-provider";
 
 const fs = require("fs");
 const async = require("async");
+const compiler = require("bpmn-sol");
 
 const customPaletteModule = {
   paletteProvider: ["type", PaletteProvider]
@@ -72,15 +73,20 @@ export class ModelerComponent implements OnInit {
 
   validateName() {
     this.modeler.saveXML({ format: true }, (err: any, xml: string) => {
-      for (let i = 0; i < this.modeler.definitions.rootElements.length; i++) {
-        if (this.modeler.definitions.rootElements[i].$type === 'bpmn:Process') {
-          if (this.processStorage.hasModel(this.modeler.definitions.rootElements[i].id)) {
+      for (let i = 0; i < this.modeler.definitions.rootElements.length; i++) 
+      {
+        if (this.modeler.definitions.rootElements[i].$type === 'bpmn:Process') 
+        {
+          if (this.processStorage.hasModel(this.modeler.definitions.rootElements[i].id)) 
+          {
             this.modelText =
               'The selected ID exists on the Workspace. Please, change this value and try again.';
-          } else if (!this.modeler.definitions.rootElements[i].name || this.modeler.definitions.rootElements[i].name === '') {
+          } 
+          else if (!this.modeler.definitions.rootElements[i].name || this.modeler.definitions.rootElements[i].name === '') {
             this.modelText =
               'The Name of the model cannot be empty. Please, update this value and try again.';
-          } else {
+          } 
+          else {
             this.goToDashborad();
             this.processStorage.modelId = this.modeler.definitions.rootElements[i].id;
             this.processStorage.registerModel(xml);
@@ -95,5 +101,14 @@ export class ModelerComponent implements OnInit {
 
   goToDashborad() {
       this.router.navigateByUrl('/dashboard');
+  }
+  agentBaseSimulation(){
+    this.modeler.saveXML({ format: true }, (err: any, xml: string) => {
+      const contract = compiler.compile(xml).then(contract => {
+        console.log(contract);
+       })
+    });
+    
+    alert("wait to comlate");
   }
 }
