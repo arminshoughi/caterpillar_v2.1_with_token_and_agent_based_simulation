@@ -146,6 +146,23 @@ vote(rNominator, rNominee, rEndorser, endorser, pCase, onNomination, isAccepted)
       (error) => { });
   }
 
+  getRegisterModel(model: string) {
+    this.http
+      .post('http://localhost:3000/models', { bpmn: model })
+      .subscribe(
+        (resp) => {
+        const res = resp.json();
+        console.log(res.solidity)
+        // if (res.id && res.bpmn && res.solidity && this.processes.indexOf(res) < 0) {
+        //   this.searchRegisteredModel('');
+        //   console.log('Model ' + res.name + ' succesfully registered');
+        // } else {
+        //   console.log('Error trying to register ' + this.modelId);
+        // }
+      },
+      (error) => { console.log(error)});
+  }
+  
   searchRegisteredModel(modelId: string) {
     this.http
       .get('http://localhost:3000/models')

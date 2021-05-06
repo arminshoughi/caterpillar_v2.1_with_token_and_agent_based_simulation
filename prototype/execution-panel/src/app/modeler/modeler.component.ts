@@ -9,9 +9,10 @@ import tockensimulation from 'bpmn-js-token-simulation';
 import { PaletteProvider } from "./palette";
 import { CustomPropertiesProvider } from "./props-provider";
 
+
 const fs = require("fs");
 const async = require("async");
-const compiler = require("bpmn-sol");
+// const compiler = require("bpmn-sol");
 
 const customPaletteModule = {
   paletteProvider: ["type", PaletteProvider]
@@ -87,7 +88,7 @@ export class ModelerComponent implements OnInit {
               'The Name of the model cannot be empty. Please, update this value and try again.';
           } 
           else {
-            this.goToDashborad();
+            // this.goToDashborad();
             this.processStorage.modelId = this.modeler.definitions.rootElements[i].id;
             this.processStorage.registerModel(xml);
             this.modelText =
@@ -103,12 +104,33 @@ export class ModelerComponent implements OnInit {
       this.router.navigateByUrl('/dashboard');
   }
   agentBaseSimulation(){
-    this.modeler.saveXML({ format: true }, (err: any, xml: string) => {
-      const contract = compiler.compile(xml).then(contract => {
-        console.log(contract);
-       })
-    });
     
-    alert("wait to comlate");
+    this.modeler.saveXML({ format: true }, (err: any, xml: string) => {
+      for (let i = 0; i < this.modeler.definitions.rootElements.length; i++) 
+      {
+        if (this.modeler.definitions.rootElements[i].$type === 'bpmn:Process') 
+        {
+          if (this.processStorage.hasModel(this.modeler.definitions.rootElements[i].id)) 
+          {
+            this.modelText =
+              'The selected ID exists on the Workspace. Please, change this value and try again.';
+          } 
+          else if (!this.modeler.definitions.rootElements[i].name || this.modeler.definitions.rootElements[i].name === '') {
+            this.modelText =
+              'The Name of the model cannot be empty. Please, update this value and try again.';
+          } 
+          else {
+            // this.goToDashborad();
+            this.processStorage.modelId = this.modeler.definitions.rootElements[i].id;
+            this.processStorage.getRegisterModel(xml);
+            this.modelText =
+              'Working in Model Registration. Please, take into account that this may require some seconds.';
+          }
+          break;
+        }
+      }
+      
+    })
+    
   }
 }
