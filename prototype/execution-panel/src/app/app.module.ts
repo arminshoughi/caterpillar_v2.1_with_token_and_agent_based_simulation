@@ -10,6 +10,8 @@ import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { ViewerComponent } from 'app/viewer/viewer.component';
 import { ProcessStorage } from 'app/data-store/data-store';
 
+import { HttpClientModule } from '@angular/common/http';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'modeler',  component: ModelerComponent },
@@ -22,13 +24,14 @@ const routes: Routes = [
     ModelerComponent,
     DashboardComponent,
     ViewerComponent,
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes) ,
+    HttpClientModule,
   ],
   exports: [
     RouterModule
