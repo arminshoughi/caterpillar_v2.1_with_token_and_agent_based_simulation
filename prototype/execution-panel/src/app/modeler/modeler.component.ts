@@ -130,8 +130,10 @@ export class ModelerComponent implements OnInit {
       // const response = await user.delete("someUserName", options); // delete single user
       // const response = await user.create(body, options); // create user
       // const response = await user.update("someUserName", body, options);
+      document.getElementById('loading').style.display='block';
       this.http.post<any>('https://webhooks.mongodb-realm.com/api/client/v2.0/app/bpmn-simulation-sukdy/service/manage-BPMNs/incoming_webhook/save-bpmn', { "bpmn": btoa(xml) }).subscribe(data => {
         console.log(data.result);
+        document.getElementById('loading').style.display='none';
         window.open("http://127.0.0.1:8080",'_blank');
       })
 
