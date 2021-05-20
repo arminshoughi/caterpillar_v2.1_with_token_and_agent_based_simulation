@@ -1,36 +1,69 @@
-
-
 <div class="container-fluid">
-  <div class="navbar-header">
-
-  </div>
-  <div class="panel-group">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse1"> <strong> Configuration: Process Runtime Registry Operations </strong> </a>
-            </h4>
-        </div>
-        <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">
-                <div class="row">
-                  <div class="col-lg-2">
-                    <button class="btn btn-success" (click)="createProcessRegistry()"> Create Registry </button>
-                  </div>
-                  <div class="col-lg-5">
-                    <div class="input-group">
-                      <span class="input-group-btn">
-                        <button class="btn btn-primary" (click)="loadProcessRegistry()">Load Registry From </button>
-                      </span>
-                      <input type="text" class="form-control" [(ngModel)]="registryAddress" placeholder="Registry address or ID in Repository">
-                    </div><!-- /input-group -->
-                  </div><!-- /.col-lg-6 -->
-                </div>
-              </div>
+    <div class="row">
+        <div class="col-lg-12" style="text-align: center;padding: 2% 50px 20px 50px;">
+            <h1>A Model-Driven Development Platform for Generating and Simulating Decentralized Applications</h1>
         </div>
     </div>
+</div>
+<div class="container-fluid">
+    <div class="context" style="padding: 10px 50px;">
+        <ul>
+            <li>
+                <p>
+                    <strong>Context:</strong> The emergence of blockchain technologyhas facilitated innovative solutions for various domains, such assupply chains, healthcare, and social networking. Decentralizedapplication development can be challenging
+                    for citizen devel-opers without having technical knowledge. Even for the moreexperienced smart contract developer, decentralized applications’complexity can significantly delay the development process.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Method:</strong> Model-Driven Development platforms shift the focusof software development activity from coding to modeling forsoftware development companies. Accordingly, in this study, weintroduce a model-driven development
+                    platform for generatingsmart contract-based decentralized applications according totheir business models. The proposed platform enables citizendevelopers to design, deploy and simulate the behavior of de-centralized applications on
+                    actual permissioned or permissionlessblockchain systems.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Results:</strong> We evaluate the feasibility, usefulness, and efficiency ofthe platform in generating decentralized applications. The resultsshow that the proposed platform. . . provides a reliable approach for creatingmodel-driven
+                    development platforms for distributed hyperledgertechnology.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Conclusion:</strong> The study’s theoretical contribution is the observa-tion that the framework</p>
+            </li>
+        </ul>
 
-    <div class="panel panel-default">
+    </div>
+    <div class="panel-group">
+        <h4>Lets see how its work :</h4>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse1"> <strong> Configuration: Process Runtime Registry Operations </strong> </a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <button class="btn btn-success" (click)="createProcessRegistry()"> Create Registry </button>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                        <button class="btn btn-info" (click)="loadProcessRegistry()">Load Registry From </button>
+                      </span>
+                                <input type="text" class="form-control" [(ngModel)]="registryAddress" placeholder="Registry address or ID in Repository">
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" href="#collapse2"> <strong> Binding Policy: Static Configuration </strong> </a>
@@ -40,51 +73,58 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-4">
-                          <div class="input-group">
-                              <span class="input-group-btn">
+                            <div class="input-group">
+                                <span class="input-group-btn">
                                 <button class="btn btn-success" (click)="sendResourceModel()"> Deploy Binding Policy </button>
                               </span>
-                              <input type='file' class="btn btn-info" single (change)='openFile($event)'>
-                          </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <input style="margin: 10px 0px;" type='file' class="btn btn-info" single (change)='openFile($event)'>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-8">
-                          <label for="comment">Binding Policy to Deploy:</label>
-                          <textarea class="form-control" rows="6" [(ngModel)]="bindingPolicy"></textarea>
-                         </div>
+                            <label for="comment">Binding Policy to Deploy:</label>
+                            <textarea class="form-control" rows="6" [(ngModel)]="bindingPolicy"></textarea>
+                        </div>
                     </div>
                     <div class="row">
-                      <hr>
-                      <div class="col-lg-5">
-                          <div class="input-group">
-                              <span class="input-group-btn">
-                                <button type="submit" class="btn btn-success" (click)="createTaskRole()"> Deploy TaskRoleMap From </button>
+                        <hr>
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                                               
+                                  <input style="margin: 10px 0px;" type="text" class="form-control" [(ngModel)]="rootProcess" placeholder="Process ID in Repository">
+                                  <input style="margin: 10px 0px;" type="text" class="form-control" [(ngModel)]="policyId" placeholder="Policy ID in Repository">
                               </span>
-                              <input type="text" class="form-control" [(ngModel)]="rootProcess" placeholder="Process ID in Repository">
-                              <input type="text" class="form-control" [(ngModel)]="policyId" placeholder="Policy ID in Repository">
-                          </div><!-- /input-group -->
-                      </div>
+                            </div>
+                            <button style="margin: 10px 0px;" type="submit" class="btn btn-success" (click)="createTaskRole()"> Deploy TaskRoleMap From </button>
+                            <!-- /input-group -->
+                        </div>
                     </div>
-                  </div>
+                </div>
             </div>
-      </div>
+        </div>
 
-      <div class="panel panel-default">
-              <div class="panel-heading">
-                  <h4 class="panel-title">
-                      <a data-toggle="collapse" href="#collapse3"><strong>Binding Policy: Runtime Operations</strong></a>
-                  </h4>
-              </div>
-              <div id="collapse3" class="panel-collapse collapse">
-                  <div class="panel-body">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse3"><strong>Binding Policy: Runtime Operations</strong></a>
+                </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">
                     <div class="row">
                         <hr>
                         <div class="col-lg-2">
                             <input type="text" class="form-control" [(ngModel)]="roleToQuery" placeholder="Role Name">
                         </div>
-                        <div class="col-lg-3"> 
-                          <input type="text" class="form-control" [(ngModel)]="pCaseQuery" placeholder="Process Case To Query">
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" [(ngModel)]="pCaseQuery" placeholder="Process Case To Query">
                         </div>
                         <div class="col-lg-2">
                             <button type="submit" class="btn btn-info" (click)="findRoleState()"> Find Role Binding State </button>
@@ -92,65 +132,65 @@
                     </div>
                     <div class="row">
                         <hr>
-                          <div class="col-lg-3">
+                        <div class="col-lg-3">
                             <input type="text" class="form-control" [(ngModel)]="nominatorRole" placeholder="Nominator Role">
-                          </div>
-                          <div class="col-lg-3">
-                            <input type="text" class="form-control" [(ngModel)]="nomineeRole" placeholder="Nominee Role">
-                          </div>
-                          <div class="col-lg-3">
-                            <input type="text" class="form-control" [(ngModel)]="procesCase" placeholder="Process Case">
-                          </div>
-                      </div>
-                      <div class="row">
-                          <hr>
                         </div>
-                      <div class="row">
-                          <div class="container-fluid">
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" [(ngModel)]="nomineeRole" placeholder="Nominee Role">
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" [(ngModel)]="procesCase" placeholder="Process Case">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="container-fluid">
                             <div class="panel panel-success">
                                 <div class="panel-heading"> Nomination </div>
                                 <div class="panel-body">
                                     <div class="col-lg-3">
-                                      <input type="text" class="form-control" [(ngModel)]="nominatorNAddress" placeholder="Nominator Address">
+                                        <input type="text" class="form-control" [(ngModel)]="nominatorNAddress" placeholder="Nominator Address">
                                     </div>
                                     <div class="col-lg-3">
-                                      <input type="text" class="form-control" [(ngModel)]="nomineeNAddress" placeholder="Nominee Address">
+                                        <input type="text" class="form-control" [(ngModel)]="nomineeNAddress" placeholder="Nominee Address">
                                     </div>
                                     <div class="col-lg-3">
                                         <button type="submit" class="btn btn-success" (click)="nominate()"> Nominate </button>
                                     </div>
                                 </div>
                             </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="container-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-fluid">
                             <div class="panel panel-danger">
                                 <div class="panel-heading"> Release </div>
                                 <div class="panel-body">
                                     <div class="col-lg-3">
-                                      <input type="text" class="form-control" [(ngModel)]="nominatorRAddress" placeholder="Releaser Address">
+                                        <input type="text" class="form-control" [(ngModel)]="nominatorRAddress" placeholder="Releaser Address">
                                     </div>
                                     <div class="col-lg-3">
                                         <button type="submit" class="btn btn-danger" (click)="release()"> Release </button>
                                     </div>
                                 </div>
                             </div>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="container-fluid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-fluid">
                             <div class="panel panel-warning">
                                 <div class="panel-heading"> Vote </div>
                                 <div class="panel-body">
                                     <div class="col-lg-3">
-                                      <input type="text" class="form-control" [(ngModel)]="endorserRole" placeholder="Endorser Role">
+                                        <input type="text" class="form-control" [(ngModel)]="endorserRole" placeholder="Endorser Role">
                                     </div>
                                     <div class="col-lg-3">
-                                      <input type="text" class="form-control" [(ngModel)]="endorserAddress" placeholder="Endorser Address">
+                                        <input type="text" class="form-control" [(ngModel)]="endorserAddress" placeholder="Endorser Address">
                                     </div>
                                     <div class="col-lg-3">
-                                      <span class="border">
+                                        <span class="border">
                                         <label class="radio-inline">
                                           <input type="radio" name="R1" [(ngModel)]="onNomination" value="true" > 
                                             On-nomination
@@ -178,111 +218,151 @@
                                     </div>
                                 </div>
                             </div>
-                          </div>
-                      </div>
-                    </div>
-
-              </div>
-
-     </div>
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse4"> <strong> Business Process Operations </strong> </a>
-            </h4>
-        </div>
-        
-        <div id="collapse4" class="panel-collapse collapse">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <button class="btn btn-success" (click)="openModeler()"> Add Process Model </button>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <button type="submit" class="btn btn-info" (click)="searchElement()"> Search Models </button>
-                            </span>
-                            <input type="text" class="form-control" [(ngModel)]="toSearch" placeholder="Search">
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <hr>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1">
-                        <span class="label label-info"> Process Models List => </span>
-                    </div>
-                    <div class="col-lg-2">
-                        <input type="text" class="form-control" [(ngModel)]="caseCreatorRole" placeholder="Case Creator Role">
-                    </div>
-                    <div class="col-lg-3">
-                        <input type="text" class="form-control" [(ngModel)]="caseCreator" placeholder="Case Creator Address">
-                    </div>
-                </div>
-                <div class="row">
-                    <hr>
-                </div>
-                <div class="row">
-                    <div id="canvas"></div>
-    
-                    <div>
-                        <div class="panel-group" id="accordion1">
-                          <div class="panel panel-default" *ngFor="let proc of processStorage.processes">
-                            <div class="panel-heading">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion1" [attr.href]="'#'+proc.id">{{proc.name}}
-                                </a>
-                                <div class="pull-right">
-                                  <button class="btn btn-success btn-xs" (click)="createInstance(proc.id)"> Create instance</button>
-                                  <button class="btn btn-info btn-xs" (click)="processStorage.updateInstances(proc.id)"> Refresh instances</button>
-                                </div>
-                              </h4>
-                            </div>
-                            <div [attr.id]="proc.id" class="panel-collapse collapse">
-                              <div class="panel-body">
-                                <div class="panel-group" id="accordion21">
-                                  <div class="panel">
-                                    <a data-toggle="collapse" data-parent="#accordion21" [attr.href]="'#'+proc.id+'_solidity'">Solidity &raquo;</a>
-                                    <div [attr.id]="proc.id+'_solidity'" class="panel-collapse collapse">
-                                      <div class="panel-body">
-                                        <div>
-                                          <pre style="max-height: 30em;"><code class="language-javascript" [innerHtml]="getSolidity(proc)"></code></pre>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="panel">
-                                    <a data-toggle="collapse" data-parent="#accordion21" [attr.href]="'#'+proc.id+'_instances'">Instances &raquo;</a>
-                                    <div [attr.id]="proc.id+'_instances'" class="panel-collapse collapse in">
-                                      <div class="panel-body">
-                                        <div *ngFor="let instance of processStorage.getInstance(proc.id)" (click)="openViewer(proc.id, instance)">{{instance}}</div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                      </div>
-                </div>      
+
             </div>
-          
-        </div>
-
-
-
-
 
         </div>
-      </div>
-</div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse4"> <strong> Business Process Operations </strong> </a>
+                </h4>
+            </div>
+
+            <div id="collapse4" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <button class="btn btn-success" (click)="openModeler()"> Add Process Model </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                            <button type="submit" class="btn btn-info" (click)="searchElement()"> Search Models </button>
+                        </span>
+                                <input type="text" class="form-control" [(ngModel)]="toSearch" placeholder="Search">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <span class="form-control label label-info"> Process Models List => </span>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" class="form-control" [(ngModel)]="caseCreatorRole" placeholder="Case Creator Role">
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" [(ngModel)]="caseCreator" placeholder="Case Creator Address">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div id="canvas"></div>
+
+                        <div>
+                            <div class="panel-group" id="accordion1">
+                                <div class="panel panel-default" *ngFor="let proc of processStorage.processes">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion1" [attr.href]="'#'+proc.id">{{proc.name}}
+                                </a>
+                                            <div class="pull-right">
+                                                <button class="btn btn-success btn-xs" (click)="createInstance(proc.id)"> Create instance</button>
+                                                <button class="btn btn-info btn-xs" (click)="processStorage.updateInstances(proc.id)"> Refresh instances</button>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                    <div [attr.id]="proc.id" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="panel-group" id="accordion21">
+                                                <div class="panel">
+                                                    <a data-toggle="collapse" data-parent="#accordion21" [attr.href]="'#'+proc.id+'_solidity'">Solidity &raquo;</a>
+                                                    <div [attr.id]="proc.id+'_solidity'" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <div>
+                                                                <pre style="max-height: 30em;"><code class="language-javascript" [innerHtml]="getSolidity(proc)"></code></pre>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel">
+                                                    <a data-toggle="collapse" data-parent="#accordion21" [attr.href]="'#'+proc.id+'_instances'">Instances &raquo;</a>
+                                                    <div [attr.id]="proc.id+'_instances'" class="panel-collapse collapse in">
+                                                        <div class="panel-body">
+                                                            <div *ngFor="let instance of processStorage.getInstance(proc.id)" (click)="openViewer(proc.id, instance)">{{instance}}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
 
 
+
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse5"> <strong> About us  </strong> </a>
+                </h4>
+            </div>
+
+            <div id="collapse5" class="panel-collapse collapse">
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <img class="media-object" src="../../assets/img/siamak.jpeg" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Siamak Farshidi</h4>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque quas alias iusto commodi, corporis accusamus ducimus exercitationem sit similique ex, id corrupti numquam magnam ut repellat architecto expedita asperiores totam.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <img class="media-object" src="../../assets/img/armin.jpg" alt="...">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Armin Shoughi</h4>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque quas alias iusto commodi, corporis accusamus ducimus exercitationem sit similique ex, id corrupti numquam magnam ut repellat architecto expedita asperiores totam.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

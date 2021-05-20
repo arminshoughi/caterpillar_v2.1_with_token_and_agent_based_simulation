@@ -1,32 +1,48 @@
 <div class="container-fluid">
-  <div id="loading">
-    <div id="loader"></div>
-  </div>
-  <div class="panel-group">
-    <input type='file' class="btn btn-default navbar-btn" single (change)='openFile($event)'>
-    <button class="btn btn-default navbar-btn" (click)="agentBaseSimulation()"> Multi-Instance Simulation </button>
-    <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal" (click)="validateName()">Save</button>
-    <button class="btn btn-default navbar-btn" (click)="goToDashborad()"> Discard </button>
-  </div>
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <p ng-bind="modelText"> {{ modelText }}</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" (click)="goToDashborad()" data-dismiss="modal"> OK </button>
-        </div>
-      </div>
-  
+    <div id="loading">
+        <div id="loader"></div>
     </div>
-  </div>
-  <div id="canvas"></div>
-  <div id="js-properties-panel"></div>
-</div>
+    <div class="panel-group">
+        <div class="row">
+            <div class="col-lg-12">
+                <input style="display: inline;" type='file' class="btn btn-default navbar-btn" single (change)='openFile($event)'>
+                <button style="padding: 10px;" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal" (click)="validateName()">Save</button>
+                <button style="padding: 10px;" class="btn btn-default navbar-btn" (click)="goToDashborad()"> Discard </button>
+                <button style="padding: 10px;" class="btn btn-default navbar-btn" (click)="agentBaseSimulation()"> Multi-Instance Simulation </button>
 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+
+
+            </div>
+        </div>
+
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p ng-bind="modelText"> {{ modelText }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="goToDashborad()" data-dismiss="modal"> OK </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="canvas" style="  border-style: solid; border-width: 1px; border-color: #52B415;background: #fcfcfc;"></div>
+    <div id="js-properties-panel"></div>
+</div>

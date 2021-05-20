@@ -1,0 +1,17 @@
+.media {
+    padding: 25px;
+}
+
+.media img {
+    width: 250px;
+    height: 250px;
+}
+
+.label {
+    display: block;
+    padding: 10px;
+}
+
+h4 {
+    font-weight: bold;
+}

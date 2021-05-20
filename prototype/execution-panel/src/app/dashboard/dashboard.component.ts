@@ -12,6 +12,7 @@ const Prism = require('prismjs');
 
 @Component({
   selector: 'dashboard',
+  styleUrls: ["./dashboard.component.css"],
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {
